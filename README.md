@@ -15,7 +15,14 @@
 
 <h3>Demostração da Aplicação</h3>
 
+<h2>Paginal Inicial</h2>
+
 ![image](https://github.com/felipessantana/Projeto-Sistema-de-Gerenciamento-Operacional/assets/73258352/49085981-5f67-47ca-a60c-2f76c0843ae6)
+
+<h2>Pagina Dispositivos</h2>
+
+![image](https://github.com/felipessantana/Projeto-Sistema-de-Gerenciamento-Operacional/assets/73258352/aa08fcfa-ef33-434e-b35e-fef73f27b89a)
+
 
 
 <p>🚨 Ferramentas utilizadas nesse projeto</p>
