@@ -1,0 +1,54 @@
+<mat-table [dataSource]="devices">
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+    <mat-cell *matCellDef="let device">{{ device.name }}</mat-cell>
+  </ng-container>
+
+  <!-- Setor Column -->
+  <ng-container matColumnDef="sector">
+    <mat-header-cell *matHeaderCellDef>Setor</mat-header-cell>
+    <mat-cell *matCellDef="let device">
+      {{ device.sector }}
+      <mat-icon aria-hidden="false" aria-label="Example home icon">{{
+        device.sector | sector
+      }}</mat-icon>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Action Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef class="action-column">
+      <button
+        (click)="onAdd()"
+        mat-mini-fab
+        color="primary"
+        aria-label="Adicionar um novo dispositivo"
+        class="action-column-header"
+      >
+        <mat-icon >add</mat-icon>
+      </button>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let device" class="action-column">
+      <button
+      (click)="onEdit(device)"
+        mat-icon-button
+        color="primary"
+        aria-label="Editar dispositivo"
+
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+      (click)="onDelete(device)"
+        mat-icon-button
+        color="warn"
+        aria-label="Remover dispositivo"
+        >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

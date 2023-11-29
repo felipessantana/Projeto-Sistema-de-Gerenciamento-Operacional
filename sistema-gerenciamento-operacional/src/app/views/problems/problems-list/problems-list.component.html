@@ -1,0 +1,50 @@
+<mat-card>
+  <mat-table [dataSource]="problems">
+
+
+    <!-- Nome Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+      <mat-cell *matCellDef="let problem"> {{problem.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Descricao Column -->
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef> Descrição </mat-header-cell>
+      <mat-cell *matCellDef="let problem"> {{problem.description}} </mat-cell>
+    </ng-container>
+
+    <!-- Nivel Column -->
+    <ng-container matColumnDef="level">
+      <mat-header-cell *matHeaderCellDef> Nivel </mat-header-cell>
+      <mat-cell *matCellDef="let problem"> {{problem.level}} </mat-cell>
+    </ng-container>
+
+    <!-- Action Column -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef class="action-column">
+        <button
+          (click)="onAdd()"
+           mat-mini-fab color="primary"
+           aria-label="Adicionar um novo problema"
+           class="action-column-header">
+
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let problem" class="action-column">
+        <button mat-icon-button color="primary" aria-label="Editar  problema"
+        (click)="onEdit(problem)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" aria-label="Remover  problema">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-cell>
+
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</mat-card>

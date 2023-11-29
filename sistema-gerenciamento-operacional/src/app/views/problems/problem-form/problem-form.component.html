@@ -1,0 +1,30 @@
+<mat-card>
+  <mat-toolbar color="primary">
+    Detalhes dos Problemas
+  </mat-toolbar>
+  <mat-card-content>
+    <form [formGroup]="form" class="min-width">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Nome" formControlName="name">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Descricao" formControlName="description">
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Nível</mat-label>
+          <mat-select formControlName="level">
+            <mat-option value="informacao">Informação</mat-option>
+            <mat-option value="atencao">Atenção</mat-option>
+            <mat-option value="media">Média</mat-option>
+            <mat-option value="alta">Alta</mat-option>
+            <mat-option value="desastre">Desastre</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+    <button mat-raised-button (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+
+</mat-card>
