@@ -1,4 +1,4 @@
-<h1>  Projeto-Sistema-de-Gerenciamento-Operacional </h1>
+<h1>  Projeto Sistema de Gerenciamento Operacional </h1>
 
 <p> Projeto Desenvolvido atravês de Estudo em Spring Boot, Java, Angular</p>
 
